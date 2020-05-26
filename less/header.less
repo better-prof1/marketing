@@ -1,0 +1,54 @@
+  header {
+  .mobile({
+    .flex();
+  });
+
+  div.header {
+    .flex(@mainAxis: space-between);
+
+    height: 4rem;
+    padding: 3rem;
+
+    div.logo {
+      .flex(@mainAxis: flex-start);
+
+      .mobile({
+        .flex(@direction: row-reverse, @mainAxis:center, @crossAxis: center);
+      });
+
+      img {
+        width: 5rem;
+        height: 4rem;
+        .mobile({
+          display: none;
+        });
+      }
+
+      div.logo-text {
+        .flex(@direction: column);
+
+        margin-left: 2rem;
+        text-align: center;
+        
+        h1 {
+          font-size: 3.5rem;
+          color: @primary-color;
+          font-weight: 700;
+          .mobile({margin-bottom: 1rem});
+        }
+
+        h2 {
+          .mobile({
+            display: none;
+          });
+          font-size: 1.7rem;
+        }
+      }
+    }
+      div.login-register {
+        .mobile({
+          display: none;
+        });
+      }
+  }
+}

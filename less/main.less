@@ -1,0 +1,157 @@
+h1.title {
+  display:none;
+
+  .mobile({
+    display:block;
+    text-align: center;
+  });
+}
+
+
+// Main Landing Page
+section.main {
+  .flex(@direction: row-reverse, @mainAxis: center, @crossAxis:flex-start);
+  width: 80%;
+  margin: 5rem auto;
+  
+  .mobileAndTablet(
+    {
+      .flex(@direction: column, @mainAxis:center, @crossAxis:center);
+      width: 100%;
+      text-align: center;
+      margin: auto;
+    });
+
+  .bp {
+    .mobile({
+      margin: 0;
+      width: 100%;
+      h1 {
+        display:  none;
+      }
+    });
+
+    img {
+      // min-width: 4.7rem;
+      max-width: 47rem;
+      object-fit: contain;
+      
+      .mobileAndTablet({
+          padding: 0;
+          margin: 0;
+      });
+
+      .tablet({
+        max-width: 52rem;
+      });
+
+      .mobile({
+        max-width: 100%;
+      });
+    }
+  }
+  
+  .content {
+    margin-top: 2rem;
+    padding-right: 2rem;
+    align-items: center;
+    
+    .mobile({
+      padding-right: 0;
+    });
+
+    h2 {
+      font-size: 4.5rem;
+      font-weight: 1000;
+    }
+    p {
+      font-size: 1.9rem;
+    }
+  }
+
+  .log-sign{
+    margin-top: 8rem;
+    a {
+      display: block;
+      width: 80%;
+      margin: auto;
+
+      .mobile({
+        margin: 2rem auto;
+      });
+
+      color:@primary-color;
+      text-decoration: none;
+      text-align: center;
+      border-radius: .6rem;
+      border: 1px solid @primary-color;
+      font-family: 'Roboto Slab';
+      font-size: 2.5rem;
+      padding: 1rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+    }
+    a.sign-up {
+      background-color: @primary-color;
+      color: @white;
+    }
+  }
+}
+
+
+// Reviews Page
+section.main-reviews {
+  h2 {
+    text-align: center;
+    margin: 2rem;
+  }
+  section.reviews {
+    .flex(@mainAxis: space-evenly);
+    width: 80%;
+    margin: auto;
+
+    .mobileAndTablet({
+      .flex(@direction: column);
+      width: 100%;
+    });
+
+    h4 {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    section.review {
+      padding: 2rem;
+      max-width: 45rem;
+
+      div.customer-info {
+        margin-bottom: 2rem;
+        div.name-rating {
+          .flex(@mainAxis:flex-start);
+          span.rating {
+            padding-left: 5rem;
+            color: @primary-color;
+            i {
+              padding-right: .5rem;
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+// About Page
+section.about {
+  text-align: center;
+  h4 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  p {
+    width: 90%;
+    margin: auto;
+    line-height: 3rem;
+  }
+}

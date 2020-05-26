@@ -1,0 +1,23 @@
+.flex(@direction: row, @mainAxis: center, @crossAxis: center, @wrap: nowrap) {
+  display: flex;
+  flex-direction: @direction;
+  justify-content: @mainAxis;
+  align-items: @crossAxis;
+}
+
+.mobile(@rules) {
+  @media (max-width: @mobileWidth) {
+    @rules();
+  };
+}
+
+.tablet(@rules) {
+  @media (max-width: @tabletWidth) and (min-width: @mobileWidth) {
+    @rules();
+  }
+}
+
+.mobileAndTablet(@rules) {
+  .mobile({@rules()});
+  .tablet({@rules()});
+}
