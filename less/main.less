@@ -145,13 +145,41 @@ section.main-reviews {
 // About Page
 section.about {
   text-align: center;
-  h4 {
-    font-size: 2rem;
+  h2 {
+    font-size: 3rem;
     font-weight: bold;
+    margin: 2rem;
   }
   p {
     width: 90%;
     margin: auto;
     line-height: 3rem;
+  }
+  div.lambsidian {
+    margin: 5rem;
+    width: 30rem;
+    h3 {
+      font-size: 2rem;
+    }
+    h4 {
+      font-size: 1.5rem;
+    }
+    img {
+      width: 25rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+
+  }
+
+  div.us-list {
+    width: 80%;
+    margin: auto;
+    .flex(@mainAxis: center, @wrap: wrap, @crossAxis: baseline);
+    .mobileAndTablet({
+      .flex(@direction: column);
+      width: 100%;
+    });
   }
 }
